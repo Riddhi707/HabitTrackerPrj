@@ -16,5 +16,4 @@ Habit Tracker is an Android application designed to help users create, track, an
 - **Firebase Services:** 
   - Firebase Authentication
   - Firebase Firestore
-- **Layouts:**
-  -Xmls 
+- **Layouts:** XMLS
