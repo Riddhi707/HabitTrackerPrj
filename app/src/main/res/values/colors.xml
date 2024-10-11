@@ -2,8 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="pink">#F6BACB</color>
-    <color name="blue">#0D629B</color>
+    <color name="pink">#F4CBD5</color>
+    <color name="blue">#2D91D5</color>
     <color name="red">#EF8179</color>
     <color name="gray">#959392</color>
     <color name="darkgray">#565454</color>
@@ -16,6 +16,8 @@
     <color name="textSecondary">#757575</color>
     <color name="buttonBackground">#6200EE</color>
     <color name="buttonText">#FFFFFF</color>
+    <color name="lavender">#E6DDF4</color>
+
 
 
 
