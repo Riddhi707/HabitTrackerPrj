@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Habit_Tracker_Prj</string>
+    <string name="app_name">Habit Tracker</string>
+    <string name="quit_habit_button">Quit Habit</string>
+    <string name="success_quit_message">Successfully logged your quit habit.</string>
+    <string name="error_logging_quit_habit">Error logging quit habit: %1$s</string> <!-- Added placeholder for the error message -->
+    <string name="hint_habit_name">Enter Habit Name</string>
+    <string name="hint_start_date">Enter Start Date (e.g., 2024–10–11)</string>
+    <string name="hint_quit_date">Enter Quit Date (e.g., 2024–10–15)</string>
+    <string name="progress_message">Progress will show here</string>
 </resources>
