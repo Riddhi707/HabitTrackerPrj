@@ -13,13 +13,20 @@
         android:theme="@style/Theme.Habit_Tracker_Prj"
         tools:targetApi="31">
 
+        <activity
+            android:name=".Login_Activity"
+            android:exported="false" /> // shelly
+        <activity
+            android:name=".Register_Activity"
+            android:exported="false" />  //shelly
+
 
         <activity
             android:name=".HabitsAdapter"
-            android:exported="false" />
+            android:exported="false" /> // Abhishek
         <activity
             android:name=".AllHabitsActivity"
-            android:exported="false" />
+            android:exported="false" /> // Abhishek
         <activity
             android:name=".NewHabitActivity"
             android:exported="true">
@@ -28,10 +35,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> // Abhishek
         <activity
             android:name=".Register_Activity"
-            android:exported="false" />
+            android:exported="false" /> // Abhishek
 
     </application>
 
