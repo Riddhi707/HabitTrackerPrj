@@ -8,15 +8,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class QuitHabitActivity extends AppCompatActivity {
 
     private EditText etHabitName, etStartDate, etQuitDate;
+    private Button btnSubmit;
     private TextView tvProgress;
-
     private FirebaseFirestore db;
 
     @Override
@@ -27,9 +26,10 @@ public class QuitHabitActivity extends AppCompatActivity {
         etHabitName = findViewById(R.id.etHabitName);
         etStartDate = findViewById(R.id.etStartDate);
         etQuitDate = findViewById(R.id.etQuitDate);
-        Button btnSubmit = findViewById(R.id.btnSubmit);
+        btnSubmit = findViewById(R.id.btnSubmit);
         tvProgress = findViewById(R.id.tvProgress);
 
+        // Initialize Firestore
         db = FirebaseFirestore.getInstance();
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
