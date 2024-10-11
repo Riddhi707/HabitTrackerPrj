@@ -15,18 +15,18 @@
 
         <activity
             android:name=".Login_Activity"
-            android:exported="false" /> // shelly
+            android:exported="false" />
         <activity
             android:name=".Register_Activity"
-            android:exported="false" />  //shelly
+            android:exported="false" />
 
 
         <activity
             android:name=".HabitsAdapter"
-            android:exported="false" /> // Abhishek
+            android:exported="false" />
         <activity
             android:name=".AllHabitsActivity"
-            android:exported="false" /> // Abhishek
+            android:exported="false" />
         <activity
             android:name=".NewHabitActivity"
             android:exported="true">
@@ -35,10 +35,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> // Abhishek
-        <activity
-            android:name=".Register_Activity"
-            android:exported="false" /> // Abhishek
+        </activity>
+
 
     </application>
 
