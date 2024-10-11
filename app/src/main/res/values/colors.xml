@@ -7,5 +7,13 @@
     <color name="red">#EF8179</color>
     <color name="gray">#959392</color>
     <color name="darkgray">#565454</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="background">#F5F5F5</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="buttonBackground">#6200EE</color>
+    <color name="buttonText">#FFFFFF</color>
 
 </resources>
