@@ -1,4 +1,5 @@
 [versions]
+firebase-firestore = "24.7.1"
 agp = "8.6.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -9,8 +10,11 @@ activity = "1.9.2"
 constraintlayout = "2.1.4"
 googleGmsGoogleServices = "4.4.2"
 firebaseAuth = "23.0.0"
+googleFirebaseAppdistribution = "5.0.0"
+
 
 [libraries]
+firebase-firestore = "com.google.firebase:firebase-firestore:24.7.1"
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -23,4 +27,5 @@ firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+google-firebase-appdistribution = { id = "com.google.firebase.appdistribution", version.ref = "googleFirebaseAppdistribution" }
 
