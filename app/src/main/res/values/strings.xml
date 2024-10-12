@@ -7,4 +7,5 @@
     <string name="hint_start_date">Enter Start Date (e.g., 2024–10–11)</string>
     <string name="hint_quit_date">Enter Quit Date (e.g., 2024–10–15)</string>
     <string name="progress_message">Progress will show here</string>
+
 </resources>

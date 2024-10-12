@@ -47,6 +47,8 @@ dependencies {
     // Material Components library
     implementation ("com.google.android.material:material:1.9.0")
 
+
+
     // implementation(libs.firebase.firestore)
     // give reference to libs.versions.toml
 
