@@ -4,44 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
+    android:background="@color/lavender"
     android:padding="16dp">
+
+    <!-- Back Button -->
+    <Button
+    android:id="@+id/btnBackToAddHabit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text=" Back"
+    android:textColor="@android:color/white"
+    android:backgroundTint="@color/colorAccent"
+        android:padding="10dp"
+        android:drawablePadding="8dp"
+        android:layout_gravity="start"/>
 
     <!-- Title -->
     <TextView
-        android:id="@+id/tvAllHabitsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="All New Habits"
-        android:textSize="24sp"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp" />
-
-
-
-    <!-- RecyclerView to display all habits -->
-
-    <!-- Back Button -->
+    android:id="@+id/tvAllHabitsTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="All New Habits"
+    android:textSize="30sp"
+    android:textColor="@android:color/black"
+    android:layout_marginBottom="20dp"
+    android:padding="20dp"
+    android:textStyle="bold"
+    android:textAlignment="center"
+    android:gravity="center"/>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvAllHabits"
-        android:layout_width="match_parent"
-        android:layout_height="239dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-    <Button
-        android:id="@+id/btnBackToAddHabit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:layout_marginBottom="16dp"
-        android:onClick="onBackPressed"/>
-
-    <Button
-        android:id="@+id/btnQuitHabit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quit Habit"
-        android:layout_marginTop="16dp" />
-
-</LinearLayout>
+    android:id="@+id/rvAllHabits"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:clipToPadding="false"
+    android:paddingBottom="16dp"/>
+    </LinearLayout>
