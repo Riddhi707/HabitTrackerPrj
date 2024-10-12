@@ -1,93 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/background">
 
-    <!-- Title for the page -->
+    <!-- Title -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/quit_habit_button"
+        android:text="Quit a Habit"
         android:textSize="24sp"
-        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
+        android:textColor="@android:color/white"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp" />
 
-    <!-- CardView to wrap input fields for better styling -->
+    <!-- Card for Input Fields -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp">
+        android:padding="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/etHabitName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_habit_name"
-                android:background="@drawable/rounded_edittext"
-                android:padding="12dp"
+                android:hint="Enter Habit Name"
                 android:textColor="@android:color/black"
+                android:padding="10dp"
+                android:textColorHint="@android:color/darker_gray"
                 android:layout_marginBottom="16dp" />
 
             <EditText
                 android:id="@+id/etStartDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_start_date"
-                android:background="@drawable/rounded_edittext"
-                android:padding="12dp"
+                android:hint="Enter Start Date"
                 android:textColor="@android:color/black"
+                android:padding="10dp"
+                android:textColorHint="@android:color/darker_gray"
                 android:layout_marginBottom="16dp" />
 
             <EditText
                 android:id="@+id/etQuitDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_quit_date"
-                android:background="@drawable/rounded_edittext"
-                android:padding="12dp"
+                android:hint="Enter Quit Date"
                 android:textColor="@android:color/black"
+                android:padding="10dp"
+                android:textColorHint="@android:color/darker_gray"
                 android:layout_marginBottom="16dp" />
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Submit button with rounded corners -->
+    <!-- Submit Button -->
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/quit_habit_button"
+        android:text="Submit"
         android:textColor="@android:color/white"
-        android:backgroundTint="@color/colorAccent"
-        android:layout_gravity="center"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:padding="12dp"
-        android:elevation="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_button" />
-
-    <!-- TextView to show progress or messages -->
-    <TextView
-        android:id="@+id/tvProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/progress_message"
-        android:textColor="@color/colorPrimary"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp" />
+        android:layout_gravity="center" />
 
 </LinearLayout>

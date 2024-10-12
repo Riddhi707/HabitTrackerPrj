@@ -7,15 +7,6 @@
     android:background="@color/background"
     android:padding="16dp">
 
-    <!-- Back Button -->
-    <Button
-        android:id="@+id/btnBackToAddHabit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:layout_marginBottom="16dp"
-        android:onClick="onBackPressed"/>
-
     <!-- Title -->
     <TextView
         android:id="@+id/tvAllHabitsTitle"
@@ -27,10 +18,30 @@
         android:textStyle="bold"
         android:layout_marginBottom="20dp" />
 
+
+
     <!-- RecyclerView to display all habits -->
+
+    <!-- Back Button -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAllHabits"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        android:layout_height="239dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <Button
+        android:id="@+id/btnBackToAddHabit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_marginBottom="16dp"
+        android:onClick="onBackPressed"/>
+
+    <Button
+        android:id="@+id/btnQuitHabit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quit Habit"
+        android:layout_marginTop="16dp" />
+
 </LinearLayout>

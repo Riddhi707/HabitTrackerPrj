@@ -1,0 +1,12 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#3F51B5" /> <!-- Background Color -->
+        </shape>
+    </item>
+<!--    <item>-->
+<!--        <bitmap-->
+<!--            android:src="@drawable/your_background_image" &lt;!&ndash; Add your image here &ndash;&gt;-->
+<!--             android:gravity="center" />-->
+<!--    </item>-->
+</layer-list>

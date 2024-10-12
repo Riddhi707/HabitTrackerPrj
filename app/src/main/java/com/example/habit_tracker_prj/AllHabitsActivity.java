@@ -60,5 +60,12 @@ public class AllHabitsActivity extends AppCompatActivity {
                     }
                 })
                 .addOnFailureListener(e -> Log.e("Firestore", "Error fetching data", e));
+
+
+        View btnQuitHabit = null;
+        btnQuitHabit.setOnClickListener(v -> {
+            // Redirect to QuitHabitActivity
+            startActivity(new Intent(AllHabitsActivity.this, QuitHabitActivity.class));
+        });
     }
 }
