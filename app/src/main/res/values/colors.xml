@@ -19,6 +19,11 @@
     <color name="lavender">#E6DDF4</color>
 
 
+        <color name="background_color">#3F51B5</color> <!-- Main background color -->
+        <color name="button_color">#6200EE</color> <!-- Button color -->
+        <color name="edit_text_color">#FFFFFF</color> <!-- EditText background color -->
+
+
 
 
 </resources>
