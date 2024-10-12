@@ -16,7 +16,9 @@
     <color name="textSecondary">#757575</color>
     <color name="buttonBackground">#6200EE</color>
     <color name="buttonText">#FFFFFF</color>
-
+    <color name="background_color">#3F51B5</color> <!-- Main background color -->
+    <color name="button_color">#6200EE</color> <!-- Button color -->
+    <color name="edit_text_color">#FFFFFF</color> <!-- EditText background color -->
 
 
 </resources>
