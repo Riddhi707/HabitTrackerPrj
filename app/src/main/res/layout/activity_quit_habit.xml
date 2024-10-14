@@ -14,11 +14,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
-    android:textColor="@android:color/white"
-    android:backgroundTint="@color/colorAccent"
-    android:layout_gravity="start"
-    android:padding="8dp"
-    android:layout_marginBottom="16dp" />
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_gravity="start"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
 
     <!-- Title for the page -->
     <TextView

@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class QuitHabitActivity extends AppCompatActivity {
     private EditText etHabitName, etStartDate, etQuitDate;
-    private Button btnSubmit;
+    private Button btnSubmit, btnBack; // Added btnBack for handling back button
     private FirebaseFirestore db;
 
     @Override
@@ -28,11 +28,12 @@ public class QuitHabitActivity extends AppCompatActivity {
         etStartDate = findViewById(R.id.etStartDate);
         etQuitDate = findViewById(R.id.etQuitDate);
         btnSubmit = findViewById(R.id.btnSubmit);
+        btnBack = findViewById(R.id.btnBack); // Initialize back button
 
         // Initialize Firestore
         db = FirebaseFirestore.getInstance();
 
-        // Set OnClickListener for the button
+        // Set OnClickListener for the submit button
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,6 +48,17 @@ public class QuitHabitActivity extends AppCompatActivity {
                 } else {
                     logQuitHabit(habitName, startDate, quitDate); // Call method to log habit
                 }
+            }
+        });
+
+        // Set OnClickListener for the back button
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate back to AddHabitActivity (or any other activity you want)
+                Intent intent = new Intent(QuitHabitActivity.this, NewHabitActivity.class);
+                startActivity(intent);
+                finish(); // Close the current activity
             }
         });
     }
