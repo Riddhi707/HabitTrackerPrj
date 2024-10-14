@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import android.widget.TextView; // Import for TextView
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -19,6 +20,7 @@ public class NewHabitActivity extends AppCompatActivity {
     private EditText etHabitName, etTimesPerWeek, etTimesPerDay, etDuration;
     private TimePicker tpTime;
     private Button btnSubmitHabit, btnAllHabits;
+    private TextView tvQuitHabit; // Declare TextView for quitting habits
     private FirebaseFirestore db;
 
     @Override
@@ -37,6 +39,7 @@ public class NewHabitActivity extends AppCompatActivity {
         tpTime = findViewById(R.id.tpTime);
         btnSubmitHabit = findViewById(R.id.btnSubmitHabit);
         btnAllHabits = findViewById(R.id.btnAllHabits);
+        tvQuitHabit = findViewById(R.id.tvQuitHabit); // Link the new TextView
 
         // Set up "Add Habit" button listener
         btnSubmitHabit.setOnClickListener(v -> {
@@ -47,6 +50,12 @@ public class NewHabitActivity extends AppCompatActivity {
         // Set up "All New Habits" button listener to navigate to AllHabitsActivity
         btnAllHabits.setOnClickListener(v -> {
             Intent intent = new Intent(NewHabitActivity.this, AllHabitsActivity.class);
+            startActivity(intent);
+        });
+
+        // Set up "Quit Habit" TextView listener
+        tvQuitHabit.setOnClickListener(v -> {
+            Intent intent = new Intent(NewHabitActivity.this, QuitHabitActivity.class);
             startActivity(intent);
         });
     }
@@ -66,12 +75,26 @@ public class NewHabitActivity extends AppCompatActivity {
             return;
         }
 
+        // Validate that numeric fields are valid integers
+        int parsedTimesPerWeek;
+        int parsedTimesPerDay;
+        int parsedDuration;
+
+        try {
+            parsedTimesPerWeek = Integer.parseInt(timesPerWeek);
+            parsedTimesPerDay = Integer.parseInt(timesPerDay);
+            parsedDuration = Integer.parseInt(duration);
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Please enter valid numbers for times per week, times per day, and duration", Toast.LENGTH_SHORT).show();
+            return; // Exit the method if parsing fails
+        }
+
         // Create a habit map to store in Firestore
         Map<String, Object> habit = new HashMap<>();
         habit.put("habitName", habitName);
-        habit.put("timesPerWeek", Integer.parseInt(timesPerWeek));
-        habit.put("timesPerDay", Integer.parseInt(timesPerDay));
-        habit.put("duration", Integer.parseInt(duration));
+        habit.put("timesPerWeek", parsedTimesPerWeek);
+        habit.put("timesPerDay", parsedTimesPerDay);
+        habit.put("duration", parsedDuration);
         habit.put("hour", hour);
         habit.put("minute", minute);
 
