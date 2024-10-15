@@ -61,7 +61,7 @@ public class Login_Activity extends AppCompatActivity {
                         .addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
                                 // Move to NewHabitActivity if login is successful
-                                startActivity(new Intent(Login_Activity.this, NewHabitActivity.class));
+                                startActivity(new Intent(Login_Activity.this, MainPageActivity.class));
                                 finish();
                             } else {
                                 Toast.makeText(Login_Activity.this, "Login failed. Please check your credentials.", Toast.LENGTH_SHORT).show();

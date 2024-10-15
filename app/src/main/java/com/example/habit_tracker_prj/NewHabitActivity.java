@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import android.widget.TextView; // Import for TextView
+import android.widget.TextView;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -19,8 +19,8 @@ public class NewHabitActivity extends AppCompatActivity {
 
     private EditText etHabitName, etTimesPerWeek, etTimesPerDay, etDuration;
     private TimePicker tpTime;
-    private Button btnSubmitHabit, btnAllHabits;
-    private TextView tvQuitHabit; // Declare TextView for quitting habits
+    private Button btnSubmitHabit, btnAllHabits, btnBack; // Added btnBack
+    private TextView tvQuitHabit;
     private FirebaseFirestore db;
 
     @Override
@@ -39,7 +39,8 @@ public class NewHabitActivity extends AppCompatActivity {
         tpTime = findViewById(R.id.tpTime);
         btnSubmitHabit = findViewById(R.id.btnSubmitHabit);
         btnAllHabits = findViewById(R.id.btnAllHabits);
-        tvQuitHabit = findViewById(R.id.tvQuitHabit); // Link the new TextView
+        btnBack = findViewById(R.id.btnBack); // Link the back button
+
 
         // Set up "Add Habit" button listener
         btnSubmitHabit.setOnClickListener(v -> {
@@ -53,10 +54,13 @@ public class NewHabitActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // Set up "Quit Habit" TextView listener
-        tvQuitHabit.setOnClickListener(v -> {
-            Intent intent = new Intent(NewHabitActivity.this, QuitHabitActivity.class);
+
+
+        // Set up "Back" button listener to navigate to MainActivity
+        btnBack.setOnClickListener(v -> {
+            Intent intent = new Intent(NewHabitActivity.this, MainPageActivity.class);
             startActivity(intent);
+            finish(); // Optional: Call finish() to remove this activity from the back stack
         });
     }
 

@@ -56,7 +56,7 @@ public class QuitHabitActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Navigate back to AddHabitActivity (or any other activity you want)
-                Intent intent = new Intent(QuitHabitActivity.this, NewHabitActivity.class);
+                Intent intent = new Intent(QuitHabitActivity.this, MainPageActivity.class);
                 startActivity(intent);
                 finish(); // Close the current activity
             }

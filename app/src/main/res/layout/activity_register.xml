@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas/android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="0dp"
-    android:background="@color/pink">
+    android:background="@color/pink"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@color/black"
         android:padding="10dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginTop="3dp">
+        android:layout_marginTop="3dp"> <!-- Added top margin -->
 
     <!-- Habit Tracker Title -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Habit Tracker"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:layout_gravity="center_vertical" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Habit Tracker"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
 
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="60dp"
-        android:src="@drawable/sign"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="130dp"
-        />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:src="@drawable/sign"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="130dp" />
+
 
 </LinearLayout>
 
@@ -90,7 +89,10 @@
         android:padding="20dp"
         android:textSize="16dp"
         android:backgroundTint="@color/red"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:clickable="true"
+        android:focusable="true"
+   />
 
     <TextView
         android:layout_width="wrap_content"

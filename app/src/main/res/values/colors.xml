@@ -17,6 +17,8 @@
     <color name="buttonBackground">#6200EE</color>
     <color name="buttonText">#FFFFFF</color>
     <color name="lavender">#E6DDF4</color>
+    <color name="button_pressed_color">#D0CAD5</color> <!-- Change to your desired color -->
+
 
 
         <color name="background_color">#3F51B5</color> <!-- Main background color -->

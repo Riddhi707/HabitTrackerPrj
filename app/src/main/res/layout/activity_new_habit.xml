@@ -8,6 +8,19 @@
     android:gravity="center_horizontal"
     android:background="@color/background">
 
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_gravity="start"
+        android:padding="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="16dp" />
+
     <!-- Title -->
     <TextView
         android:id="@+id/tvTitle"
@@ -107,9 +120,11 @@
         app:cornerRadius="8dp"
         app:icon="@drawable/ic_add"
         app:iconPadding="8dp"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_marginBottom="12dp"/>
 
-    <!-- Button to see all new habits -->
+
     <!-- Button to see all new habits -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnAllHabits"
@@ -123,22 +138,10 @@
         app:cornerRadius="8dp"
         app:icon="@drawable/ic_view_list"
         app:iconPadding="8dp"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_marginBottom="12dp" />
 
 
-    <!-- Clickable TextView to Quit Habit -->
-    <TextView
-        android:id="@+id/tvQuitHabit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="If you want to quit habit"
-        android:textSize="18sp"
-    android:textColor="@color/colorAccent"
-    android:textStyle="bold"
-    android:layout_marginTop="20dp"
-    android:clickable="true"
-    android:focusable="true"
-    android:background="?attr/selectableItemBackground"
-    android:padding="10dp"
-    android:layout_gravity="center" />  <!-- Centered the TextView -->
+
 </LinearLayout>
