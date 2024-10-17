@@ -1,59 +1,57 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_primary90"> <!-- Reference the background color -->
+    android:padding="16dp"
+    android:background="@color/material_dynamic_primary90">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/progressTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Track Your Progress"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:text="Progress Tracking"
+        android:background="@color/material_dynamic_primary50"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <EditText
-        android:id="@+id/etLog"
-        android:layout_width="match_parent"
+        android:id="@+id/progressEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter daily progress"
-        android:padding="20dp"
-        android:textColor="@android:color/black"
-        android:textColorHint="@android:color/darker_gray"
-        android:layout_margin="16dp"
-        android:background="@drawable/edit_text_background"/> <!-- Reference EditText background -->
+        android:hint="Enter your progress for today"
+        android:background="@color/white"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressTitle"
+        android:padding="20dp"/>
 
     <Button
-        android:id="@+id/btnLog"
+        android:id="@+id/logProgressButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log Progress"
-        android:layout_below="@id/etLog"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center"
-        android:textColor="@android:color/white"
-        android:background="@drawable/button_background"/>
-
-    <Button
-        android:id="@+id/btnViewProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Progress"
-        android:layout_below="@id/btnLog"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center"
-        android:textColor="@android:color/white"
-        android:background="@drawable/button_background"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressEditText"
+        />
 
     <TextView
-        android:id="@+id/tvProgress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Progress details will be shown here"
-        android:layout_below="@id/btnViewProgress"
-        android:layout_marginTop="20dp"
-        android:textSize="16sp"
-        android:textColor="@android:color/white"/>
+        android:id="@+id/progressListTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:text="Logged Progress:"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/logProgressButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

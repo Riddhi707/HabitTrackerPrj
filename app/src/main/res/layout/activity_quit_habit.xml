@@ -1,103 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
-    android:padding="16dp">
+    android:padding="24dp"
+    android:background="@color/pink">
 
-    <!-- Back Button -->
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:textColor="@android:color/white"
-        android:backgroundTint="@color/colorAccent"
-        android:layout_gravity="start"
-        android:padding="8dp"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Title for the page -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/quit_habit_button"
-        android:textSize="24sp"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp" />
-
-    <!-- CardView to wrap input fields for better styling -->
-    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp">
+        android:text="Quit Habit"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/buttonText"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <EditText
-                android:id="@+id/etHabitName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_habit_name"
-                android:background="@drawable/rounded_edittext"
-                android:padding="12dp"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="16dp" />
-
-            <EditText
-                android:id="@+id/etStartDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_start_date"
-                android:background="@drawable/rounded_edittext"
-                android:padding="12dp"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="16dp" />
-
-            <EditText
-                android:id="@+id/etQuitDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_quit_date"
-                android:background="@drawable/rounded_edittext"
-                android:padding="12dp"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="16dp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- Submit button with rounded corners -->
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/habitNameEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/quit_habit_button"
-        android:textColor="@android:color/white"
-        android:backgroundTint="@color/colorAccent"
-        android:layout_gravity="center"
+        android:hint="Enter Habit Name"
         android:padding="12dp"
-        android:elevation="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_button" />
+        android:background="@drawable/edit_text_background"
+        android:textColorHint="@color/gray" />
 
-    <!-- TextView to show progress or messages -->
-    <TextView
-        android:id="@+id/tvProgress"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/startDateEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/progress_message"
-        android:textColor="@color/colorPrimary"
-        android:layout_gravity="center"
+        android:hint="Enter Start Date (dd/MM/yyyy)"
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"
+        android:textColorHint="@color/gray"
         android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/quitDateEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Quit Date (dd/MM/yyyy)"
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"
+        android:textColorHint="@color/gray"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="178dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/colorAccent"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:text="Next"
+        android:textColor="@android:color/white" />
+
 </LinearLayout>

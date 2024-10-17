@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Habit_Tracker_Prj"
         tools:targetApi="31">
         <activity
+            android:name=".ReportActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainPageActivity"
             android:exported="false" />
         <activity
@@ -26,7 +29,7 @@
             android:exported="false" />
         <activity
             android:name=".QuitHabitActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Login_Activity"
             android:exported="false" />

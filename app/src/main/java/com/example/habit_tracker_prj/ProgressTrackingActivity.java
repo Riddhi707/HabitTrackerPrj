@@ -1,6 +1,7 @@
 package com.example.habit_tracker_prj;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -8,42 +9,40 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProgressTrackingActivity extends AppCompatActivity {
-    private EditText etLog;
-    private Button btnLog, btnViewProgress;
-    private TextView tvProgress;
-    private String habitName, quitGoal;
+
+    EditText progressEditText;
+    Button logProgressButton;
+    TextView progressListTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_progress_tracking);
 
-        etLog = findViewById(R.id.etLog);
-        btnLog = findViewById(R.id.btnLog);
-        btnViewProgress = findViewById(R.id.btnViewProgress);
-        tvProgress = findViewById(R.id.tvProgress);
+        progressEditText = findViewById(R.id.progressEditText);
+        logProgressButton = findViewById(R.id.logProgressButton);
+        progressListTextView = findViewById(R.id.progressListTextView);
 
-        // Retrieve the habit data passed from QuitGoalActivity
-        habitName = getIntent().getStringExtra("habitName");
-        quitGoal = getIntent().getStringExtra("quitGoal");
+        logProgressButton.setOnClickListener(v -> logProgress());
+    }
 
-        btnLog.setOnClickListener(v -> {
-            String log = etLog.getText().toString().trim();
-            if (!log.isEmpty()) {
-                // Save the log (this could be saved in Firestore or locally)
-                Toast.makeText(ProgressTrackingActivity.this, "Progress logged!", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(ProgressTrackingActivity.this, "Please enter a log", Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void logProgress() {
+        String progressEntry = progressEditText.getText().toString().trim();
 
-        btnViewProgress.setOnClickListener(v -> {
-            // Display motivational messages or progress
-            if (quitGoal.equals("immediate")) {
-                tvProgress.setText("You're doing great by quitting immediately!");
-            } else if (quitGoal.equals("gradual")) {
-                tvProgress.setText("You're making excellent progress towards gradual quitting!");
-            }
-        });
+        if (TextUtils.isEmpty(progressEntry)) {
+            Toast.makeText(this, "Please enter your progress", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Here you could save the progress to a database or other storage
+        // For now, we will just display it in a TextView
+
+        // Append the new progress entry to the TextView
+        String currentProgress = progressListTextView.getText().toString();
+        progressListTextView.setText(currentProgress + "\n" + progressEntry);
+
+        // Clear the EditText after logging
+        progressEditText.setText("");
+        Toast.makeText(this, "Progress logged!", Toast.LENGTH_SHORT).show();
     }
 }

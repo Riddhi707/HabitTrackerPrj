@@ -1,6 +1,7 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#FFFFFF"/> <!-- Background Color for EditText -->
-    <corners android:radius="10dp"/> <!-- Rounded Corners -->
-    <padding android:left="10dp" android:right="10dp" android:top="10dp" android:bottom="10dp"/>
-
+    <solid android:color="@android:color/white"/>
+    <corners android:radius="8dp"/>
+    <stroke
+        android:width="1dp"
+        android:color="@color/colorPrimary"/>
 </shape>
