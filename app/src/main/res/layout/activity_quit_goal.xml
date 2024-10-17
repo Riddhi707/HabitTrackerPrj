@@ -1,62 +1,24 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_quit_goal">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- Title -->
-    <TextView
-        android:id="@+id/textViewTitle"
+    <RadioButton
+        android:id="@+id/immediateGoal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Set Your Quit Goal"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:text="Quit Immediately" />
 
-    <!-- Quit Goal Options -->
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
+    <RadioButton
+        android:id="@+id/gradualGoal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewTitle"
-        android:layout_marginTop="100dp"
-        android:padding="20dp">
+        android:text="Gradually Reduce" />
 
-        <RadioButton
-            android:id="@+id/rbImmediate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quit Immediately"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:padding="10dp"
-            android:background="@drawable/radio_button_background" />
-
-        <RadioButton
-            android:id="@+id/rbGradual"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quit Gradually"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:padding="10dp"
-            android:background="@drawable/radio_button_background" />
-
-    </RadioGroup>
-
-    <!-- Next Button -->
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/continueButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
-        android:textColor="@android:color/white"
-        android:background="@drawable/button_background"
-        android:padding="12dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/radioGroup"
-        android:layout_marginTop="40dp" />
-
-</RelativeLayout>
+        android:text="Continue" />
+</LinearLayout>

@@ -2,43 +2,40 @@ package com.example.habit_tracker_prj;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class QuitGoalActivity extends AppCompatActivity {
-    private RadioButton rbImmediate, rbGradual;
-    private Button btnNext;
-    private String habitName, startDate, quitDate;
+
+    RadioButton immediateGoal, gradualGoal;
+    Button continueButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quit_goal);
 
-        // Retrieve the habit data passed from QuitHabitActivity
-        habitName = getIntent().getStringExtra("habitName");
-        startDate = getIntent().getStringExtra("startDate");
-        quitDate = getIntent().getStringExtra("quitDate");
+        immediateGoal = findViewById(R.id.immediateGoal);
+        gradualGoal = findViewById(R.id.gradualGoal);
+        continueButton = findViewById(R.id.continueButton);
 
-        rbImmediate = findViewById(R.id.rbImmediate);
-        rbGradual = findViewById(R.id.rbGradual);
-        btnNext = findViewById(R.id.btnNext);
+        String habitName = getIntent().getStringExtra("habitName");
+        String startDate = getIntent().getStringExtra("startDate");
+        String quitDate = getIntent().getStringExtra("quitDate");
 
-        btnNext.setOnClickListener(v -> {
-            if (rbImmediate.isChecked()) {
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String goalType = immediateGoal.isChecked() ? "Immediate" : "Gradual";
+
                 Intent intent = new Intent(QuitGoalActivity.this, ProgressTrackingActivity.class);
                 intent.putExtra("habitName", habitName);
-                intent.putExtra("quitGoal", "immediate");
+                intent.putExtra("startDate", startDate);
+                intent.putExtra("quitDate", quitDate);
+                intent.putExtra("goalType", goalType);
                 startActivity(intent);
-            } else if (rbGradual.isChecked()) {
-                Intent intent = new Intent(QuitGoalActivity.this, ProgressTrackingActivity.class);
-                intent.putExtra("habitName", habitName);
-                intent.putExtra("quitGoal", "gradual");
-                startActivity(intent);
-            } else {
-                Toast.makeText(QuitGoalActivity.this, "Please select a quit goal", Toast.LENGTH_SHORT).show();
             }
         });
     }
