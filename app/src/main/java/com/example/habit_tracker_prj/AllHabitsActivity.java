@@ -31,6 +31,7 @@ public class AllHabitsActivity extends AppCompatActivity {
 
         rvAllHabits = findViewById(R.id.rvAllHabits);
         rvAllHabits.setLayoutManager(new LinearLayoutManager(this));
+        rvAllHabits.setAdapter(adapter);
 
         btnBackToAddHabit = findViewById(R.id.btnBackToAddHabit);
         btnBackToAddHabit.setOnClickListener(v -> {
@@ -62,10 +63,7 @@ public class AllHabitsActivity extends AppCompatActivity {
                 .addOnFailureListener(e -> Log.e("Firestore", "Error fetching data", e));
 
 
-        View btnQuitHabit = null;
-        btnQuitHabit.setOnClickListener(v -> {
-            // Redirect to QuitHabitActivity
-            startActivity(new Intent(AllHabitsActivity.this, QuitHabitActivity.class));
-        });
+
     }
+
 }
