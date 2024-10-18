@@ -2,13 +2,13 @@ package com.example.habit_tracker_prj;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import android.widget.TextView;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -19,8 +19,7 @@ public class NewHabitActivity extends AppCompatActivity {
 
     private EditText etHabitName, etTimesPerWeek, etTimesPerDay, etDuration;
     private TimePicker tpTime;
-    private Button btnSubmitHabit, btnAllHabits, btnBack; // Added btnBack
-    private TextView tvQuitHabit;
+    private Button btnSubmitHabit, btnAllHabits, btnBack;
     private FirebaseFirestore db;
 
     @Override
@@ -39,29 +38,52 @@ public class NewHabitActivity extends AppCompatActivity {
         tpTime = findViewById(R.id.tpTime);
         btnSubmitHabit = findViewById(R.id.btnSubmitHabit);
         btnAllHabits = findViewById(R.id.btnAllHabits);
-        btnBack = findViewById(R.id.btnBack); // Link the back button
+        btnBack = findViewById(R.id.btnBack);
 
-
-        // Set up "Add Habit" button listener
+        // Set up "Submit Habit" button listener
         btnSubmitHabit.setOnClickListener(v -> {
-            Toast.makeText(NewHabitActivity.this, "Button clicked", Toast.LENGTH_SHORT).show();
-            addNewHabit();
+            // Validate input fields, including TimePicker
+            if (isValidInput()) {
+                addNewHabit();
+            } else {
+                Toast.makeText(NewHabitActivity.this, "Please fill out all fields, including time", Toast.LENGTH_SHORT).show();
+            }
         });
 
-        // Set up "All New Habits" button listener to navigate to AllHabitsActivity
+        // Set up "All Habits" button listener to navigate to AllHabitsActivity
         btnAllHabits.setOnClickListener(v -> {
             Intent intent = new Intent(NewHabitActivity.this, AllHabitsActivity.class);
             startActivity(intent);
         });
 
-
-
-        // Set up "Back" button listener to navigate to MainActivity
+        // Set up "Back" button listener to navigate to MainPageActivity
         btnBack.setOnClickListener(v -> {
             Intent intent = new Intent(NewHabitActivity.this, MainPageActivity.class);
             startActivity(intent);
             finish(); // Optional: Call finish() to remove this activity from the back stack
         });
+    }
+
+    private boolean isValidInput() {
+        // Check if the input fields are empty
+        String habitName = etHabitName.getText().toString().trim();
+        String timesPerWeek = etTimesPerWeek.getText().toString().trim();
+        String timesPerDay = etTimesPerDay.getText().toString().trim();
+        String duration = etDuration.getText().toString().trim();
+
+        // Handle TimePicker depending on Android version
+        int hour, minute;
+        if (Build.VERSION.SDK_INT >= 23) {
+            hour = tpTime.getHour();
+            minute = tpTime.getMinute();
+        } else {
+            hour = tpTime.getCurrentHour();
+            minute = tpTime.getCurrentMinute();
+        }
+
+        // Ensure no fields are empty, and time is set
+        return !habitName.isEmpty() && !timesPerWeek.isEmpty() && !timesPerDay.isEmpty() && !duration.isEmpty()
+                && !(hour == 0 && minute == 0); // TimePicker should not be default 00:00
     }
 
     private void addNewHabit() {
@@ -70,13 +92,15 @@ public class NewHabitActivity extends AppCompatActivity {
         String timesPerWeek = etTimesPerWeek.getText().toString().trim();
         String timesPerDay = etTimesPerDay.getText().toString().trim();
         String duration = etDuration.getText().toString().trim();
-        int hour = tpTime.getCurrentHour();
-        int minute = tpTime.getCurrentMinute();
 
-        // Validate that fields are not empty
-        if (habitName.isEmpty() || timesPerWeek.isEmpty() || timesPerDay.isEmpty() || duration.isEmpty()) {
-            Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show();
-            return;
+        // Handle TimePicker depending on Android version
+        int hour, minute;
+        if (Build.VERSION.SDK_INT >= 23) {
+            hour = tpTime.getHour();
+            minute = tpTime.getMinute();
+        } else {
+            hour = tpTime.getCurrentHour();
+            minute = tpTime.getCurrentMinute();
         }
 
         // Validate that numeric fields are valid integers
@@ -106,12 +130,35 @@ public class NewHabitActivity extends AppCompatActivity {
         db.collection("habits")
                 .add(habit)
                 .addOnSuccessListener(documentReference -> {
-                    Toast.makeText(NewHabitActivity.this, "Habit added successfully", Toast.LENGTH_SHORT).show();
+                    // Show a success toast message
+                    Toast.makeText(NewHabitActivity.this, "Habit added successfully!", Toast.LENGTH_SHORT).show();
                     Log.d("Firestore", "DocumentSnapshot written with ID: " + documentReference.getId());
+
+                    // Clear the input fields after success
+                    clearFields();
+
                 })
                 .addOnFailureListener(e -> {
+                    // Show an error toast message
                     Toast.makeText(NewHabitActivity.this, "Error adding habit", Toast.LENGTH_SHORT).show();
                     Log.e("Firestore", "Error adding document", e);
                 });
+    }
+
+    private void clearFields() {
+        // Clear all input fields
+        etHabitName.setText("");
+        etTimesPerWeek.setText("");
+        etTimesPerDay.setText("");
+        etDuration.setText("");
+
+        // Reset the TimePicker to default (00:00)
+        if (Build.VERSION.SDK_INT >= 23) {
+            tpTime.setHour(0);
+            tpTime.setMinute(0);
+        } else {
+            tpTime.setCurrentHour(0);
+            tpTime.setCurrentMinute(0);
+        }
     }
 }

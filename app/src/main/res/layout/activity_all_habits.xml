@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/lavender"
-    android:padding="16dp">
+    android:padding="10dp"
+    android:fitsSystemWindows="true">
+
 
     <!-- Back Button -->
     <Button
@@ -17,7 +19,8 @@
         android:backgroundTint="@color/colorAccent"
         android:padding="10dp"
         android:drawablePadding="8dp"
-        android:layout_gravity="start"/>
+        android:layout_gravity="start"
+        android:layout_marginLeft="10dp"/>
 
     <!-- Title -->
     <TextView
@@ -39,6 +42,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:clipToPadding="false"
-        android:paddingBottom="16dp"/>
+        android:paddingBottom="16dp"
+        android:layout_marginLeft="10dp"/>
 
 </LinearLayout>

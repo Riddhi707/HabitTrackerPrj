@@ -2,17 +2,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="0dp"
+    android:fitsSystemWindows="true"
+    android:background="@color/gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:padding="10dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="3dp"> <!-- Added top margin -->
+
+        <!-- Habit Tracker Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Habit Tracker"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="8dp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:src="@drawable/clock"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="130dp" />
+
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/achievementTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="20dp"
         android:text="Your achievements will be displayed here!" />
 
     <Button
         android:id="@+id/viewReportButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Detailed Report" />
+        android:text="View Detailed Report"
+        android:layout_marginLeft="10dp"/>
 </LinearLayout>

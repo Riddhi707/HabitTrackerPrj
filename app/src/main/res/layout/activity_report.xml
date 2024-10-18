@@ -6,6 +6,7 @@
     android:padding="16dp"
     android:background="#FFFFFF">
 
+
     <TextView
         android:id="@+id/reportTextView"
         android:layout_width="0dp"
