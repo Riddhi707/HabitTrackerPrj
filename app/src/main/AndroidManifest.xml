@@ -13,6 +13,15 @@
         android:theme="@style/Theme.Habit_Tracker_Prj"
         tools:targetApi="31">
         <activity
+            android:name=".SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainPageActivity"
             android:exported="false" />
         <activity
@@ -26,18 +35,14 @@
             android:exported="false" />
         <activity
             android:name=".QuitHabitActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Login_Activity"
             android:exported="false" />
         <activity
             android:name=".Register_Activity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".HabitsAdapter"

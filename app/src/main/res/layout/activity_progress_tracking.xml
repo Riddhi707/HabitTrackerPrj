@@ -14,7 +14,7 @@
         android:background="@color/material_dynamic_primary50"
         android:textColor="@color/white"
         android:textSize="24sp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,11 +26,12 @@
         android:layout_height="wrap_content"
         android:hint="Enter your progress for today"
         android:background="@color/white"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/progressTitle"
-        android:padding="20dp"/>
+        android:padding="20dp"
+        />
 
     <Button
         android:id="@+id/logProgressButton"

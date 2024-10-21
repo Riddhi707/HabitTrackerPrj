@@ -19,7 +19,8 @@
     <color name="lavender">#E6DDF4</color>
     <color name="button_pressed_color">#D0CAD5</color> <!-- Change to your desired color -->
 
-
+    <color name="pur">#1C1423</color> <!-- Button color -->
+    <color name="y">#6C047C</color> <!-- Button color -->
 
         <color name="background_color">#3F51B5</color> <!-- Main background color -->
         <color name="button_color">#6200EE</color> <!-- Button color -->
