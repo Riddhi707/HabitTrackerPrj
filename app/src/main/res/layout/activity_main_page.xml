@@ -94,24 +94,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"/>
 
-        <!-- Quit Habit Button -->
-        <Button
-            android:id="@+id/btnQuitHabit1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Quit a Habit"
-            android:textColor="@color/background"
 
-        android:drawablePadding="10dp"
-        android:padding="16dp"
-        android:layout_marginBottom="12dp"
-        android:clickable="true"
-        android:focusable="true"
-            android:background="@drawable/selector_button"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-
-            />
     </LinearLayout>
 
 </LinearLayout>

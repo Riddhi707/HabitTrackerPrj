@@ -17,21 +17,20 @@
         android:layout_marginBottom="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/progressEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter your progress for today"
+        android:hint="Enter your progress for today (1-10)"
         android:background="@color/white"
         android:layout_marginBottom="30dp"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/progressTitle"
-        android:padding="20dp"
-        />
+        android:padding="20dp"/>
 
     <Button
         android:id="@+id/logProgressButton"
@@ -40,19 +39,29 @@
         android:text="Log Progress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/progressEditText"
-        />
+        app:layout_constraintTop_toBottomOf="@id/progressEditText"/>
 
-    <TextView
-        android:id="@+id/progressListTextView"
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Logged Progress:"
-        android:textSize="18sp"
+        android:max="10"
+        android:progress="0"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/logProgressButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <TextView
+        android:id="@+id/progressMessageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

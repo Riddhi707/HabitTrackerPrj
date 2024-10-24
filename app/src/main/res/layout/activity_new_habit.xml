@@ -1,145 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:padding="0dp"
+    android:orientation="vertical">
 
+    <!-- Header Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="15dp"
-        android:gravity="center_horizontal">
+        android:background="@color/black"
+        android:padding="8dp"
+        android:paddingTop="5dp"
+        android:layout_marginBottom="60dp">
 
-        <!-- Title -->
         <TextView
-            android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create New Habit"
-            android:textSize="24sp"
-            android:textColor="@color/colorPrimary"
+            android:text="Habit Tracker"
+            android:textSize="35sp"
             android:textStyle="bold"
-            android:layout_marginBottom="12dp"/>
+            android:textColor="@android:color/white" />
 
-        <!-- Habit Name Input -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Habit Name"
-            android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etHabitName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/textPrimary" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Times Per Week Input -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Times per Week"
-            android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etTimesPerWeek"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:textColor="@color/textPrimary" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Times Per Day Input -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Times per Day"
-            android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etTimesPerDay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:textColor="@color/textPrimary" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Duration Input (in minutes) -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Duration (minutes)"
-            android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etDuration"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:textColor="@color/textPrimary" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Time Picker Title -->
-        <TextView
-            android:id="@+id/tvTimePickerTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Pick a Time"
-            android:textSize="16sp"
-            android:textColor="@color/textSecondary"
-            android:layout_marginBottom="10dp"/>
-
-        <!-- Time Picker -->
-        <TimePicker
-            android:id="@+id/tpTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:timePickerMode="spinner" />
-
-        <!-- Submit Button for adding new habit -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSubmitHabit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add Habit"
-            android:backgroundTint="@color/buttonBackground"
-            android:textColor="@color/buttonText"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_add"
-            app:iconPadding="8dp"
-            android:layout_marginBottom="8dp"/>
-
-        <!-- Button to see all new habits -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnAllHabits"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:padding="16dp"
-            android:text="All New Habits"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:textColor="@color/buttonText"
-            app:cornerRadius="8dp"
-            app:icon="@drawable/ic_view_list"
-            app:iconPadding="8dp"
-            android:layout_marginBottom="8dp" />
-
-
-
-        <Button
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:backgroundTint="@color/colorAccent"
-            android:layout_gravity="start"
-            android:textColor="@color/white"
-            android:layout_marginTop="16dp"/>
-
-
+        <!-- Small Image to the right -->
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:src="@drawable/clock"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="130dp" />
     </LinearLayout>
-</ScrollView>
+
+    <!-- Habit Name Input -->
+    <EditText
+        android:id="@+id/habitNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Habit Name"
+        android:inputType="text"
+        android:padding="12dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/editbox_background" />
+
+    <!-- Select Start Date (Date Picker) -->
+    <TextView
+        android:id="@+id/startDateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Start Date"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:backgroundTint="@color/pink"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="12dp"
+        android:gravity="center" />
+
+    <!-- Add Habit Button -->
+    <Button
+        android:id="@+id/addHabitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Habit"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Update Habit Button -->
+    <Button
+        android:id="@+id/updateHabitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Habit"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Delete Habit Button -->
+    <Button
+        android:id="@+id/deleteHabitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Habit"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Track Progress Button -->
+    <Button
+        android:id="@+id/trackProgressButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Track Progress"
+        android:layout_marginLeft="30dp"
+        android:padding="12dp"
+        android:layout_marginRight="30dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
