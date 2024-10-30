@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btn_create_habit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create New Habit" />
+
+    <Button
+        android:id="@+id/btn_track_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Track and See Progress" />
+
+    <Button
+        android:id="@+id/btn_edit_delete_habit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit and Delete Habits" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout" />
+
+
+</LinearLayout>

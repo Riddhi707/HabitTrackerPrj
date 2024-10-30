@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1062116530649",
+    "firebase_url": "https://habit-tracker-prj-default-rtdb.firebaseio.com",
+    "project_id": "habit-tracker-prj",
+    "storage_bucket": "habit-tracker-prj.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062116530649:android:1f6860a5d7168b349aa1c8",
+        "android_client_info": {
+          "package_name": "com.example.habit_track"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8Pr4pU-847NFoohB-wBKZFn3g3t5BUNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062116530649:android:aeb4ad20b3237da59aa1c8",
+        "android_client_info": {
+          "package_name": "com.example.habit_tracker_prj"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8Pr4pU-847NFoohB-wBKZFn3g3t5BUNE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
